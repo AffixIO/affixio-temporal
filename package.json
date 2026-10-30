@@ -1,0 +1,30 @@
+{
+  "name": "@affixio/temporal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Opt-in, fail-closed activity authorization interceptor for Temporal workers.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": ["temporal", "authorization", "audit", "policy", "affixio"],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@temporalio/worker": "^1.25.0",
+    "affixio": "^2.0.3"
+  },
+  "devDependencies": {
+    "@temporalio/worker": "^1.25.0",
+    "affixio": "file:../github-inbox/sdk",
+    "typescript": "^5.7.3"
+  }
+}
